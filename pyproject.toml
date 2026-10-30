@@ -1,0 +1,30 @@
+[project]
+name = "slow-language-model"
+version = "0.1.0"
+description = "Resource-aware asynchronous LLM inference for consumer hardware"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "sqlalchemy",
+    "alembic",
+    "pydantic",
+    "pydantic-settings",
+    "httpx",
+    "psutil",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
